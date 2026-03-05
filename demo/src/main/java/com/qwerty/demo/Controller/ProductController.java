@@ -19,6 +19,10 @@ public class ProductController {
     Product getProductById(@PathVariable int prodId){
         return prodservice.getProductById(prodId);
     }
+    @GetMapping("/products/lessthanProduct/{price}")
+    List<Product> lessThan(@PathVariable int price){
+        return prodservice.lessThan(price);
+    }
     @PostMapping("/addProduct")
     void addProduct(@RequestBody Product prod){
         prodservice.addProduct(prod);
